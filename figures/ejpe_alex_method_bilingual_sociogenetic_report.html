@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EJPE sociogenetic report</title>
+  <style>
+    :root {
+      --ink: #18324f;
+      --muted: #64748b;
+      --line: #d9e2ec;
+      --soft: #f5f8fb;
+      --blue: #276fbf;
+      --gold: #b7791f;
+      --green: #2f855a;
+      --red: #c05621;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+      background: #fff;
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 40px 28px 80px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 34px; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; font-size: 13px; }
+    h1 { font-size: 38px; line-height: 1.12; margin: 8px 0 12px; color: #10243d; }
+    h2 { font-size: 27px; margin: 44px 0 10px; color: #10243d; }
+    h3 { font-size: 20px; margin: 28px 0 8px; color: #16365c; }
+    p { margin: 10px 0 14px; }
+    .lead { font-size: 19px; max-width: 900px; color: #334155; }
+    .note { color: var(--muted); font-size: 14px; }
+    .toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; background: var(--soft); border: 1px solid var(--line); padding: 18px; border-radius: 10px; }
+    .toc a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 22px 0; }
+    .metric { border: 1px solid var(--line); border-radius: 10px; padding: 16px; background: #fff; }
+    .metric-value { font-size: 30px; font-weight: 800; color: var(--blue); }
+    .metric-label { font-weight: 700; }
+    .metric-note { color: var(--muted); font-size: 13px; }
+    .callout { border-left: 5px solid var(--blue); background: #f7fbff; padding: 14px 18px; margin: 18px 0; }
+    .callout.gold { border-left-color: var(--gold); background: #fffaf0; }
+    .callout.green { border-left-color: var(--green); background: #f0fff4; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .figure-frame { margin: 18px 0 24px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
+    iframe { width: 100%; border: 0; display: block; }
+    .open-link { margin: 0; padding: 8px 12px; background: var(--soft); font-size: 13px; }
+    .open-link a { color: var(--blue); }
+    .table-wrap { overflow-x: auto; margin: 16px 0 24px; border: 1px solid var(--line); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 14px; }
+    th, td { padding: 9px 11px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { background: var(--soft); color: #10243d; font-weight: 750; }
+    tr:last-child td { border-bottom: 0; }
+    ul { padding-left: 22px; }
+    .tag { display: inline-block; padding: 3px 8px; border-radius: 999px; background: #eaf2ff; color: #194d8f; font-weight: 700; font-size: 13px; margin-right: 5px; }
+    footer { margin-top: 50px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; font-size: 14px; }
+    @media (max-width: 760px) {
+      .page { padding: 24px 16px 60px; }
+      h1 { font-size: 30px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+<header>
+  <div class="eyebrow">European Journal of Psychology of Education, 1986-2026</div>
+  <h1>A sociogenetic report on forty years of EJPE</h1>
+  <p class="lead">This report synthesizes topic modelling, bilingual-normalized abstracts, full-text methodology coding, author geography, editorial-board composition, founding-project article coding, and citation-lineage analysis. The aim is to describe how the journal’s intellectual object changed over time: from a founding social constructivist and socio-institutional project of psychology of education toward a broader international field of context-sensitive educational psychology.</p>
+  <p class="note">Generated on 2026-05-08 from local EJPE outputs in <code>ejpe_corpus/outputs</code>. Interactive figures can be opened directly from each section.</p>
+</header>
+
+<nav class="toc">
+  <a href="#summary">Summary</a>
+  <a href="#corpus">Corpus and Data</a>
+  <a href="#topics">Semantic Topics</a>
+  <a href="#methods">Methodological Change</a>
+  <a href="#geography">Geography and Editorial Composition</a>
+  <a href="#gilly">The Founding Project Question</a>
+  <a href="#citations">Citation Lineages</a>
+  <a href="#synthesis">Sociogenetic Interpretation</a>
+  <a href="#methods-note">Methods and Caveats</a>
+</nav>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <div class="metrics">
+    
+    <div class="metric">
+      <div class="metric-value">1,885</div>
+      <div class="metric-label">Articles analysed</div>
+      <div class="metric-note">1986-2026</div>
+    </div>
+    
+    
+    <div class="metric">
+      <div class="metric-value">14</div>
+      <div class="metric-label">BERTopic clusters</div>
+      <div class="metric-note">bilingual-normalized abstract embeddings</div>
+    </div>
+    
+    
+    <div class="metric">
+      <div class="metric-value">498</div>
+      <div class="metric-label">Canonical cited authors</div>
+      <div class="metric-note">top citation-lineage layer</div>
+    </div>
+    
+    
+    <div class="metric">
+      <div class="metric-value">42,030</div>
+      <div class="metric-label">Reference mentions</div>
+      <div class="metric-note">within top canonical cited authors</div>
+    </div>
+    
+    
+    <div class="metric">
+      <div class="metric-value">20 → 26</div>
+      <div class="metric-label">Board countries</div>
+      <div class="metric-note">1986-2022</div>
+    </div>
+    
+    
+    <div class="metric">
+      <div class="metric-value">9.6% → 27.6%</div>
+      <div class="metric-label">Multi-country authorship</div>
+      <div class="metric-note">1980s to 2020s</div>
+    </div>
+    
+  </div>
+  <div class="callout gold">
+    <strong>Core interpretation.</strong> EJPE began close to a founding social constructivist and socio-institutional project of psychology of education, articulated by Anne-Nelly Perret-Clermont, Michel Gilly and other early figures: interaction, development, didactic situations, social mediation, and institutional context were central. Over forty years, that founding orientation persisted but became one lineage within a larger international educational psychology ecology, especially motivation/self-regulation, achievement, psychometrics, and policy-oriented evidence.
+  </div>
+  <p>The most compact empirical expression of this shift is the declining relative weight of fundamental citation lineages: in the citation-lineage analysis they account for 56.3% of article-author citation links in the 1980s, 42.6% in the 1990s, 26.3% in the 2000s, 10.9% in the 2010s, and 8.8% in the 2020s. The journal did not simply abandon the founding project; rather, the project was progressively surrounded by a wider, more standardized, international educational psychology.</p>
+</section>
+
+<section id="corpus">
+  <h2>1. Corpus and Data</h2>
+  <p>The final corpus contains <strong>1,885</strong> EJPE articles from <strong>1986</strong> to <strong>2026</strong>. Abstracts were enriched and normalized, including French-to-English normalization where needed, before the final BERTopic model was created with OpenAI large embeddings. Full-text files were used for methodology coding and reference extraction.</p>
+  <div class="callout">
+    <strong>Why this matters for a sociogenetic history.</strong> The analysis does not treat EJPE as a static archive. It follows changes in the journal’s object of knowledge, methods, geography, editorial composition, and citational ancestry across successive historical periods.
+  </div>
+</section>
+
+<section id="topics">
+  <h2>2. Semantic Topic Landscape</h2>
+  <p>The semantic map shows articles as points in an embedding-based space. Distance approximates semantic similarity; colors identify the BERTopic clusters. The map is not a causal explanation, but it provides a useful overview of the journal’s intellectual terrain.</p>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_semantic_map.html" loading="lazy" style="height:740px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_semantic_map.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  <h3>Topic Labels</h3>
+  <p>The topic labels were interpreted from representative articles and cluster summaries rather than mechanically truncated keywords. This makes them more suitable for historical interpretation.</p>
+  <div class='table-wrap'><table><thead><tr><th>topic</th><th>articles</th></tr></thead><tbody><tr><td></td><td>724</td></tr><tr><td>1</td><td>343</td></tr><tr><td>2</td><td>279</td></tr><tr><td>3</td><td>190</td></tr><tr><td>4</td><td>100</td></tr><tr><td>5</td><td>54</td></tr><tr><td>6</td><td>31</td></tr><tr><td>7</td><td>38</td></tr><tr><td>8</td><td>28</td></tr><tr><td>9</td><td>24</td></tr><tr><td>10</td><td>20</td></tr><tr><td>11</td><td>16</td></tr><tr><td>12</td><td>26</td></tr><tr><td>13</td><td>12</td></tr></tbody></table></div>
+  <h3>Topic Change Over Time</h3>
+  <p>The area and trajectory plots show how the prominence of topics changes by decade. These are especially useful for identifying the rise of motivation/self-regulation, assessment, well-being, classroom interaction, early childhood, and sociocultural themes.</p>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_topics_decade_area.html" loading="lazy" style="height:520px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_topics_decade_area.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_topic_trajectories.html" loading="lazy" style="height:560px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_topic_trajectories.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_topic_emergence_timeline.html" loading="lazy" style="height:420px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_topic_emergence_timeline.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+</section>
+
+<section id="methods">
+  <h2>3. Methodological Change</h2>
+  <p>Methodology was coded from full-text method sections where possible, rather than relying only on abstracts. This reduces the risk that early French or less standardized abstracts were simply labelled as unspecified.</p>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_fulltext_methodology_by_decade_heatmap.html" loading="lazy" style="height:560px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_fulltext_methodology_by_decade_heatmap.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_fulltext_methodology_by_decade_stacked.html" loading="lazy" style="height:520px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_fulltext_methodology_by_decade_stacked.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  <h3>Dominant Method Codes By Decade</h3>
+  <div class='table-wrap'><table><thead><tr><th>decade</th><th>dominant method code</th><th>share</th></tr></thead><tbody><tr><td>1980</td><td>Experimental or intervention</td><td>36.1%</td></tr><tr><td>1980</td><td>Qualitative or interactional</td><td>18.8%</td></tr><tr><td>1990</td><td>Experimental or intervention</td><td>47.8%</td></tr><tr><td>1990</td><td>Qualitative or interactional</td><td>17.0%</td></tr><tr><td>2000</td><td>Experimental or intervention</td><td>40.8%</td></tr><tr><td>2000</td><td>Psychometric or measurement</td><td>25.8%</td></tr><tr><td>2010</td><td>Psychometric or measurement</td><td>33.4%</td></tr><tr><td>2010</td><td>Experimental or intervention</td><td>27.4%</td></tr><tr><td>2020</td><td>Psychometric or measurement</td><td>30.5%</td></tr><tr><td>2020</td><td>Experimental or intervention</td><td>30.3%</td></tr></tbody></table></div>
+  <div class="callout">
+    <strong>Interpretation.</strong> The methods profile suggests a movement from a mixed early landscape, including experimental/intervention and conceptual work, toward a later ecology in which psychometric, longitudinal, survey/correlational, and model-based methods become more prominent. This methodological standardization parallels the journal’s increasing integration into mainstream international educational psychology.
+  </div>
+</section>
+
+<section id="geography">
+  <h2>4. Geography and Editorial Composition</h2>
+  <p>The journal’s social base also changed. Authorship became more internationally distributed, and multi-country authorship rose from <strong>9.6%</strong> in the 1980s to <strong>27.6%</strong> in the 2020s. Editorial-board diversity also broadened: the cleaned board data show <strong>20</strong> represented countries in 1986 and <strong>26</strong> in 2022.</p>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_geography_decade_area.html" loading="lazy" style="height:520px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_geography_decade_area.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_gilly_geography_collaboration_by_decade.html" loading="lazy" style="height:430px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_gilly_geography_collaboration_by_decade.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  <h3>Editorial Board Dashboard</h3>
+  <p>The editorial-board analysis is a complementary institutional layer. It should be read as a social history of gatekeeping and European/international composition, not as a direct proxy for article content.</p>
+  
+    <div class="figure-frame">
+      <iframe src="../../ejpe_editorial_board/outputs/editorial_board_dashboard.html" loading="lazy" style="height:720px"></iframe>
+      <p class="open-link"><a href="../../ejpe_editorial_board/outputs/editorial_board_dashboard.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+</section>
+
+<section id="gilly">
+  <h2>5. The Founding Project Question</h2>
+  <p>The founding-project analysis asks whether an article treats education mainly as a site for applying general psychological constructs, or whether the educational situation itself is the object of explanation. Anne-Nelly Perret-Clermont and other founding figures define the broader social constructivist and socio-institutional project; Gilly’s writings are used here as explicit textual anchors for that project, alongside Doise, Mugny, Carugati, Pontecorvo, Vergnaud, Schubauer-Leoni and others. We coded IV/DV structure, the role of education in the explanation, and the resulting founding-project category.</p>
+  <div class="grid-2">
+    <div class="callout green">
+      <strong>Fundamental contextualized educational interaction.</strong><br>
+      Education is not only a setting. The didactic, institutional, dialogic, or interactional situation explains learning, knowledge construction, development, or subjectivity.
+    </div>
+    <div class="callout">
+      <strong>Context-sensitive educational psychology.</strong><br>
+      Educational context matters, but the explanation often remains centred on individual outcomes, constructs, or predictors.
+    </div>
+  </div>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_gilly_ivdv_category_by_decade.html" loading="lazy" style="height:520px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_gilly_ivdv_category_by_decade.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  <h3>Founding-Project Coding By Decade</h3>
+  <div class='table-wrap'><table><thead><tr><th>Founding-project coding category</th><th>1980</th><th>1990</th><th>2000</th><th>2010</th><th>2020</th></tr></thead><tbody><tr><td>Fundamental contextualized educational interaction</td><td>21.2</td><td>13.3</td><td>20.4</td><td>11.8</td><td>12.5</td></tr><tr><td>Theoretical/reflexive psychology of education</td><td>14.9</td><td>13.9</td><td>8.0</td><td>4.0</td><td>3.0</td></tr><tr><td>Context-sensitive educational psychology</td><td>35.6</td><td>40.7</td><td>37.8</td><td>44.2</td><td>53.0</td></tr><tr><td>Applied psychology in education</td><td>22.1</td><td>22.5</td><td>25.4</td><td>27.9</td><td>25.5</td></tr><tr><td>Methodological/measurement contribution</td><td>5.8</td><td>5.6</td><td>6.7</td><td>6.5</td><td>3.5</td></tr><tr><td>Unclear</td><td>0.5</td><td>4.0</td><td>1.7</td><td>5.5</td><td>2.4</td></tr></tbody></table></div>
+  <p>In the article-level founding-project coding, fundamental contextualized educational interaction is strongest early (21.2% in the 1980s) and remains present but less dominant in the 2020s (12.5%). By the 2020s, the largest group is context-sensitive educational psychology (53.0%), with applied psychology in education also substantial (25.5%).</p>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_gilly_ivdv_fundamental_by_topic.html" loading="lazy" style="height:520px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_gilly_ivdv_fundamental_by_topic.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_gilly_anchor_decade_lines.html" loading="lazy" style="height:460px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_gilly_anchor_decade_lines.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+</section>
+
+<section id="citations">
+  <h2>6. Citation Lineages</h2>
+  <p>The citation-lineage analysis asks a different question: not what each EJPE article is about, but what intellectual ancestors the journal repeatedly cites. This is crucial for the sociogenetic argument because it reveals the changing ancestry of the journal’s knowledge claims.</p>
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_citation_lineage_influence_canonical.html" loading="lazy" style="height:560px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_citation_lineage_influence_canonical.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  
+    <div class="figure-frame">
+      <iframe src="ejpe_alex_method_bilingual_citation_lineage_alignment_by_decade_canonical.html" loading="lazy" style="height:520px"></iframe>
+      <p class="open-link"><a href="ejpe_alex_method_bilingual_citation_lineage_alignment_by_decade_canonical.html" target="_blank">Open interactive figure</a></p>
+    </div>
+    
+  <h3>Citation Alignment Totals</h3>
+  <div class='table-wrap'><table><thead><tr><th>citation alignment</th><th>cited authors</th><th>article-author citation links</th><th>reference mentions</th></tr></thead><tbody><tr><td>bridge_contextual</td><td>268</td><td>11826</td><td>22110</td></tr><tr><td>applied_mainstream</td><td>101</td><td>4761</td><td>8968</td></tr><tr><td>fundamental</td><td>73</td><td>3298</td><td>6760</td></tr><tr><td>methodological</td><td>47</td><td>2486</td><td>3277</td></tr><tr><td>policy_context</td><td>9</td><td>642</td><td>915</td></tr></tbody></table></div>
+  <h3>Dominant Cited-Author Lineages</h3>
+  <div class='table-wrap'><table><thead><tr><th>cited-author lineage</th><th>cited authors</th><th>article-author citation links</th><th>reference mentions</th></tr></thead><tbody><tr><td>motivation_self_regulation_identity</td><td>175</td><td>9296</td><td>17195</td></tr><tr><td>didactics_classroom_knowledge_practices</td><td>67</td><td>2653</td><td>6001</td></tr><tr><td>psychometrics_measurement_statistics</td><td>46</td><td>2394</td><td>3173</td></tr><tr><td>developmental_family_peer_ecological</td><td>51</td><td>1955</td><td>3110</td></tr><tr><td>individual_differences_cognitive_achievement</td><td>47</td><td>1790</td><td>3152</td></tr><tr><td>sociocultural_dialogic_activity</td><td>35</td><td>1445</td><td>2702</td></tr><tr><td>interactionist_constructivist_social_cognitive</td><td>28</td><td>1340</td><td>2639</td></tr><tr><td>social_representations_institutional_context</td><td>22</td><td>724</td><td>1801</td></tr><tr><td>intervention_instructional_design</td><td>16</td><td>655</td><td>1185</td></tr><tr><td>corporate_data_policy_source</td><td>5</td><td>448</td><td>540</td></tr><tr><td>educational_policy_sociology_comparative</td><td>5</td><td>286</td><td>479</td></tr><tr><td>theoretical_philosophical_history</td><td>1</td><td>27</td><td>53</td></tr></tbody></table></div>
+  <h3>Most-Cited Fundamental Authors</h3>
+  <div class='table-wrap'><table><thead><tr><th>cited author</th><th>EJPE articles citing</th><th>reference mentions</th><th>lineage</th></tr></thead><tbody><tr><td>L. S. Vygotsky</td><td>146</td><td>206</td><td>sociocultural_dialogic_activity</td></tr><tr><td>J. Piaget</td><td>131</td><td>218</td><td>interactionist_constructivist_social_cognitive</td></tr><tr><td>G. Mugny</td><td>94</td><td>326</td><td>interactionist_constructivist_social_cognitive</td></tr><tr><td>A.-N. Perret-Clermont</td><td>87</td><td>260</td><td>interactionist_constructivist_social_cognitive</td></tr><tr><td>A. L. Brown</td><td>83</td><td>132</td><td>interactionist_constructivist_social_cognitive</td></tr><tr><td>U. Bronfenbrenner</td><td>80</td><td>110</td><td>developmental_family_peer_ecological</td></tr><tr><td>L. Verschaffel</td><td>75</td><td>484</td><td>didactics_classroom_knowledge_practices</td></tr><tr><td>W. Doise</td><td>75</td><td>120</td><td>interactionist_constructivist_social_cognitive</td></tr><tr><td>K. Aunola</td><td>71</td><td>151</td><td>sociocultural_dialogic_activity</td></tr><tr><td>B. Rogoff</td><td>69</td><td>100</td><td>sociocultural_dialogic_activity</td></tr><tr><td>R. C. Pianta</td><td>65</td><td>151</td><td>developmental_family_peer_ecological</td></tr><tr><td>R. Saljo</td><td>65</td><td>102</td><td>sociocultural_dialogic_activity</td></tr><tr><td>J. S. Bruner</td><td>61</td><td>83</td><td>sociocultural_dialogic_activity</td></tr><tr><td>F. Marton</td><td>59</td><td>121</td><td>didactics_classroom_knowledge_practices</td></tr><tr><td>F. Carugati</td><td>57</td><td>125</td><td>social_representations_institutional_context</td></tr></tbody></table></div>
+  <div class="callout gold">
+    <strong>Interpretation.</strong> The founding social constructivist and socio-institutional tradition remains visible through Piaget, Vygotsky, Doise, Mugny, Perret-Clermont, Carugati, Gilly, Bruner, Rogoff, Wertsch, Mercer and related figures. But the largest later citation ecology is motivation/self-regulation/identity, followed by didactics/classroom practices, psychometrics/statistics, developmental/ecological work, and individual-differences/cognitive-achievement work.
+  </div>
+</section>
+
+<section id="synthesis">
+  <h2>7. Sociogenetic Interpretation</h2>
+  <p>The overall pattern supports a sociogenetic reading of EJPE itself. The journal began as an institutional attempt to construct a European psychology of education with a distinctive object: educational interaction, development, knowledge construction, and institutionally situated learning. That object was never erased. It survives in topics, citation lineages, and recurrent authors.</p>
+  <p>However, the journal’s later development also shows internationalization, methodological standardization, and assimilation into the broader field of educational psychology. Motivation, self-regulation, achievement, psychometrics, assessment, well-being, and policy evidence become increasingly central. The journal’s identity therefore appears hybrid: neither a pure continuation of the founding project nor a simple conversion into applied psychology.</p>
+  <div class="callout">
+    <strong>Proposed formulation for the paper.</strong> EJPE can be interpreted as a sociogenetic object in its own right: a journal born from a European social constructivist and socio-institutional project, then progressively transformed through international authorship, methodological normalization, and the expansion of educational psychology as a global research field.
+  </div>
+  <h3>Possible Argument Structure</h3>
+  <ul>
+    <li><strong>Origin:</strong> the journal’s early decades are anchored in Piagetian, post-Piagetian, sociocultural, social-representational, and didactic traditions.</li>
+    <li><strong>Expansion:</strong> the article corpus broadens toward motivation, achievement, assessment, and individual/contextual predictors of educational outcomes.</li>
+    <li><strong>Institutionalization:</strong> author geography and editorial-board diversity broaden, while methods become more standardized and quantitative.</li>
+    <li><strong>Hybridization:</strong> the founding social constructivist and socio-institutional tradition persists as a minority but meaningful lineage within a broader international educational psychology.</li>
+  </ul>
+</section>
+
+<section id="methods-note">
+  <h2>8. Methods and Caveats</h2>
+  <p>This report combines several layers of evidence. Abstract-based BERTopic provides the semantic map. Full-text sections support methodology coding. OpenAI large embeddings were used after bilingual normalization. The founding-project coding uses title/abstract-based inference of explanatory structure. Citation lineages use extracted reference lists from full-text files and a canonical-name cleaning layer.</p>
+  <ul>
+    <li><strong>Bilingualism:</strong> French abstracts were normalized before the final embedding analysis, reducing language artefacts in topic modelling.</li>
+    <li><strong>Reference extraction:</strong> citation extraction from text files is strong enough for lineage analysis but not equivalent to a hand-verified bibliographic database.</li>
+    <li><strong>Canonical names:</strong> safe variants such as A.-N. Perret-Clermont and L. S. Vygotsky were merged; common surnames were not automatically merged.</li>
+    <li><strong>Founding-project coding:</strong> article categories are interpretive and should be reported as AI-assisted content coding with manual review, not as objective ground truth.</li>
+    <li><strong>Editorial-board data:</strong> board composition is a complementary institutional layer and should not be treated as a direct causal explanation of article content.</li>
+  </ul>
+  <p>Key source tables include the bilingual document-topic table, founding-project IV/DV coding table, full-text methodology coding table, canonical cited-author lineage table, and editorial-board yearly rows.</p>
+</section>
+
+<footer>
+  <p>Prepared from local project outputs. Report file: <code>C:\Users\cpsaltis\OneDrive - University of Cyprus\Documents\New project\ejpe_corpus\outputs\ejpe_alex_method_bilingual_sociogenetic_report.html</code></p>
+</footer>
+</main>
+</body>
+</html>
