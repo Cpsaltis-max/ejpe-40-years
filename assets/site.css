@@ -212,6 +212,15 @@ h3 {
   border: 0;
 }
 
+.wide-figure {
+  margin-left: calc((1180px - min(96vw, 1500px)) / 2);
+  width: min(96vw, 1500px);
+}
+
+.wide-figure iframe {
+  min-height: 700px;
+}
+
 .figure-caption {
   margin: 0;
   padding: 10px 12px;

@@ -8,15 +8,100 @@
   <script src="assets/site.js" defer></script>
 </head>
 <body>
-  <header class="site-header"><nav class="nav"><a class="brand" href="index.html">EJPE 40 Years</a><div class="nav-links"><a href="report.html">Report</a><a href="topics.html">Topics</a><a href="founding-project.html">Founding Project</a><a href="citations.html">Citation Lineages</a><a href="methods-data.html">Methods & Data</a></div></nav></header>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">EJPE 40 Years</a>
+      <div class="nav-links">
+        <a href="report.html">Report</a>
+        <a href="topics.html">Topics</a>
+        <a href="founding-project.html">Founding Project</a>
+        <a href="citations.html">Citation Lineages</a>
+        <a href="methods-data.html">Methods & Data</a>
+      </div>
+    </nav>
+  </header>
+
   <main class="page">
     <div class="eyebrow">Intellectual ancestry</div>
     <h1>Citation Lineages</h1>
-    <p class="lead">Citation lineages show what intellectual ancestors EJPE repeatedly cites. The canonical version merges safe name variants, such as A.-N. Perret-Clermont and L. S. Vygotsky.</p>
-    <section class="figure-block"><iframe src="figures/ejpe_alex_method_bilingual_citation_lineage_influence_canonical.html" data-height="600"></iframe><p class="figure-caption">Canonical cited-author lineages by influence.</p></section>
-    <section class="figure-block"><iframe src="figures/ejpe_alex_method_bilingual_citation_lineage_alignment_by_decade_canonical.html" data-height="560"></iframe><p class="figure-caption">Citation-lineage alignment over time.</p></section>
-    <section class="figure-block"><iframe src="figures/ejpe_alex_method_bilingual_gilly_geography_collaboration_by_decade.html" data-height="460"></iframe><p class="figure-caption">Collaboration type by decade.</p></section>
+    <p class="lead">These figures examine the intellectual sources cited by EJPE articles and ask how different cited traditions are taken up by different kinds of educational-psychology papers.</p>
+
+    <section>
+      <h2>How to Read This Section</h2>
+      <div class="callout">
+        The left side of the main alluvial diagram classifies <strong>cited authors</strong> by their primary intellectual lineage. The right side classifies the <strong>EJPE articles that cite them</strong>. A flow therefore means: articles of this orientation draw on authors from this intellectual lineage.
+      </div>
+      <div class="metrics">
+        <div class="metric"><strong>498</strong><span>canonical cited authors</span></div>
+        <div class="metric"><strong>12</strong><span>cited intellectual lineages</span></div>
+        <div class="metric"><strong>6</strong><span>article-orientation categories</span></div>
+        <div class="metric"><strong>1 per paper</strong><span>author counted once per citing article</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Lineages to Article Orientations</h2>
+      <p class="muted">This is the clearest genealogy figure. It shows whether EJPE papers coded as fundamental, context-sensitive, applied, theoretical/reflexive, methodological, or unclear draw on different cited intellectual traditions.</p>
+      <section class="figure-block wide-figure">
+        <iframe src="figures/ejpe_alex_method_bilingual_cited_lineages_to_article_orientation_alluvial.html" data-height="980"></iframe>
+        <p class="figure-caption">Cited intellectual lineages on the left; orientation of citing EJPE articles on the right. Hover over flows to see percentages within each cited lineage and raw article-author citation counts.</p>
+      </section>
+      <div class="callout gold">
+        The strongest general pattern is that many traditions flow into context-sensitive educational psychology. The sociocultural/dialogic and interactionist constructivist lineages, however, retain a visibly stronger connection to papers coded as fundamental educational interaction.
+      </div>
+    </section>
+
+    <section>
+      <h2>Broad Alignment Overview</h2>
+      <p class="muted">The simplified version groups cited authors into five broad alignments. It is useful as an overview before inspecting the full twelve-lineage version.</p>
+      <section class="figure-block">
+        <iframe src="figures/ejpe_alex_method_bilingual_cited_alignment_to_article_orientation_alluvial.html" data-height="760"></iframe>
+        <p class="figure-caption">Five broad cited-author alignments flowing into the six article-orientation categories.</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Core Sociogenetic Uptake</h2>
+      <p class="muted">This heatmap focuses on the stricter core sociogenetic and socio-institutional lineage. Each row sums to 100%, showing how often each cited author is taken up by each type of EJPE article.</p>
+      <section class="figure-block">
+        <iframe src="figures/ejpe_alex_method_bilingual_core_sociogenetic_author_recontextualization.html" data-height="860"></iframe>
+        <p class="figure-caption">Core cited authors and the orientations of the EJPE articles that cite them.</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Classification Dendrogram</h2>
+      <p class="muted">The dendrogram documents the coding architecture: five broad alignments, twelve detailed lineages, and the individual authors assigned to them. It is included so readers can inspect the classification rather than treating the categories as a black box.</p>
+      <section class="figure-block wide-figure">
+        <iframe src="figures/ejpe_alex_method_bilingual_citation_lineage_dendrogram.html" data-height="900"></iframe>
+        <p class="figure-caption">Three-layer hierarchy of cited-author coding. Use the search box inside the figure to locate authors or lineages.</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Earlier Citation Views</h2>
+      <p class="muted">These earlier views remain useful for checking the overall weight of canonical cited-author lineages and their historical movement.</p>
+      <section class="figure-block">
+        <iframe src="figures/ejpe_alex_method_bilingual_citation_lineage_influence_canonical.html" data-height="600"></iframe>
+        <p class="figure-caption">Canonical cited-author lineages by influence.</p>
+      </section>
+      <section class="figure-block">
+        <iframe src="figures/ejpe_alex_method_bilingual_citation_lineage_alignment_by_decade_canonical.html" data-height="560"></iframe>
+        <p class="figure-caption">Citation-lineage alignment over time.</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Download Tables</h2>
+      <div class="data-list">
+        <a href="data/ejpe_alex_method_bilingual_cited_lineages_to_article_orientation.csv">Lineages to article orientations table</a>
+        <a href="data/ejpe_alex_method_bilingual_cited_author_lineage_author_summary.csv">Authors grouped by cited intellectual lineage</a>
+        <a href="data/ejpe_alex_method_bilingual_citation_lineage_hierarchy.csv">Full three-layer hierarchy table</a>
+        <a href="data/ejpe_alex_method_bilingual_citation_cited_author_lineages_canonical_review.csv">Canonical cited-author lineage review table</a>
+      </div>
+    </section>
   </main>
+
   <footer>Public companion site. Derived figures only.</footer>
 </body>
 </html>
