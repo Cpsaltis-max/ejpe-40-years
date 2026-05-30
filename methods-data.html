@@ -13,21 +13,29 @@
     <div class="eyebrow">Reproducibility notes</div>
     <h1>Methods and Public Data</h1>
     <p class="lead">This page provides public-safe derived tables and methodological visualizations. Raw full texts, API keys, private notes, and interview materials should not be placed on the public site.</p>
+    <h2>Analysis Pipeline Overview</h2>
+    <div class="callout">
+      <p><strong>Semantic topic modelling.</strong> Article titles and abstracts were normalised into English where needed, embedded with a transformer embedding model, clustered with BERTopic, and summarised into interpretable topic labels. The interactive map shows semantic proximity among articles; the decade plots show how topic prevalence changes over time.</p>
+      <p><strong>Founding-project coding.</strong> Articles were coded according to whether educational situations were treated mainly as applications of external psychological constructs, as context-sensitive educational settings, or as sources of fundamental psychological questions about educational interaction.</p>
+      <p><strong>Methodology coding.</strong> Full-text method sections were scanned to classify articles by broad methodological orientation, including experimental/intervention, qualitative/interactional, survey/correlational, psychometric/measurement, theoretical/review, mixed methods, and unspecified cases.</p>
+      <p><strong>Citation lineage analysis.</strong> Reference lists were used to identify frequently cited authors, group them into intellectual lineages, and examine how those lineages are taken up by different kinds of EJPE articles.</p>
+      <p><strong>Geography and editorial-board analysis.</strong> Author affiliations and editorial-board records were standardised by country and region to trace the journal's changing European and international composition.</p>
+    </div>
     <h2>Methodology Over Time</h2>
-    <section class="figure-block"><iframe src="figures/ejpe_alex_method_bilingual_fulltext_methodology_by_decade_heatmap.html" data-height="560"></iframe><p class="figure-caption">Full-text methodology coding by decade.</p></section>
-    <section class="figure-block"><iframe src="figures/ejpe_alex_method_bilingual_fulltext_methodology_by_decade_stacked.html" data-height="560"></iframe><p class="figure-caption">Methodology composition by decade.</p></section>
+    <section class="figure-block"><iframe src="figures/ejpe_semantic_bilingual_fulltext_methodology_by_decade_heatmap.html" data-height="560"></iframe><p class="figure-caption">Full-text methodology coding by decade.</p></section>
+    <section class="figure-block"><iframe src="figures/ejpe_semantic_bilingual_fulltext_methodology_by_decade_stacked.html" data-height="560"></iframe><p class="figure-caption">Methodology composition by decade.</p></section>
     <h2>Geography and Editorial Board</h2>
-    <section class="figure-block"><iframe src="figures/ejpe_alex_method_bilingual_geography_decade_area.html" data-height="560"></iframe><p class="figure-caption">Authorship geography by decade.</p></section>
+    <section class="figure-block"><iframe src="figures/ejpe_semantic_bilingual_geography_decade_area.html" data-height="560"></iframe><p class="figure-caption">Authorship geography by decade.</p></section>
     <section class="figure-block"><iframe src="figures/editorial_board_dashboard.html" data-height="760"></iframe><p class="figure-caption">Editorial-board composition dashboard.</p></section>
     <h2>Downloadable Derived Tables</h2>
     <div class="data-list">
-      <a href="data/ejpe_alex_method_bilingual_topic_summaries.csv">Topic summaries</a>
-      <a href="data/ejpe_alex_method_bilingual_topics_decade_share.csv">Topic shares by decade</a>
-      <a href="data/ejpe_alex_method_bilingual_gilly_ivdv_category_by_decade_percent_table.csv">Founding-project coding percentages by decade</a>
-      <a href="data/ejpe_alex_method_bilingual_fulltext_methodology_by_decade.csv">Full-text methodology coding by decade</a>
-      <a href="data/ejpe_alex_method_bilingual_citation_cited_author_lineages_canonical_review.csv">Canonical cited-author lineage review table</a>
-      <a href="data/ejpe_alex_method_bilingual_citation_lineage_counts.csv">Citation lineage counts</a>
-      <a href="data/ejpe_alex_method_bilingual_theoretical_reflexive_theme_summary.csv">Theoretical/reflexive theme summary</a>
+      <a href="data/ejpe_semantic_bilingual_topic_summaries.csv">Topic summaries</a>
+      <a href="data/ejpe_semantic_bilingual_topics_decade_share.csv">Topic shares by decade</a>
+      <a href="data/2026-05-30_ejpe_orientation_revised_category_by_decade_percent_table.csv">Founding-project coding percentages by decade</a>
+      <a href="data/ejpe_semantic_bilingual_fulltext_methodology_by_decade.csv">Full-text methodology coding by decade</a>
+      <a href="data/ejpe_semantic_bilingual_citation_cited_author_lineages_canonical_review.csv">Canonical cited-author lineage review table</a>
+      <a href="data/ejpe_semantic_bilingual_citation_lineage_counts.csv">Citation lineage counts</a>
+      <a href="data/ejpe_semantic_bilingual_theoretical_reflexive_theme_summary.csv">Theoretical/reflexive theme summary</a>
       <a href="data/editorial_board_diversity_by_year.csv">Editorial-board diversity by year</a>
     </div>
     <div class="callout">

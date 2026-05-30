@@ -1,0 +1,72 @@
+author_lineage_code,lineage_label,citing_article_category_label,value,percent_within_cited_lineage,percent_of_all_links
+corporate_data_policy_source,Corporate data and policy sources,Applied psychology in education,100,22.321428571428573,0.43453700082562036
+corporate_data_policy_source,Corporate data and policy sources,Context-sensitive educational psychology,253,56.47321428571429,1.0993786120888194
+corporate_data_policy_source,Corporate data and policy sources,Fundamental educational interaction,33,7.366071428571429,0.1433972102724547
+corporate_data_policy_source,Corporate data and policy sources,Methodological or measurement contribution,30,6.696428571428571,0.13036110024768607
+corporate_data_policy_source,Corporate data and policy sources,Theoretical/reflexive psychology of education,19,4.241071428571429,0.08256203015686786
+corporate_data_policy_source,Corporate data and policy sources,Unclear,13,2.9017857142857144,0.05648981010733064
+developmental_family_peer_ecological,"Developmental, family, peer and ecological traditions",Applied psychology in education,414,21.176470588235293,1.798983183418068
+developmental_family_peer_ecological,"Developmental, family, peer and ecological traditions",Context-sensitive educational psychology,1227,62.76214833759591,5.331769000130361
+developmental_family_peer_ecological,"Developmental, family, peer and ecological traditions",Fundamental educational interaction,157,8.0306905370844,0.6822230912962239
+developmental_family_peer_ecological,"Developmental, family, peer and ecological traditions",Methodological or measurement contribution,59,3.0179028132992327,0.25637683048711596
+developmental_family_peer_ecological,"Developmental, family, peer and ecological traditions",Theoretical/reflexive psychology of education,38,1.9437340153452685,0.16512406031373572
+developmental_family_peer_ecological,"Developmental, family, peer and ecological traditions",Unclear,60,3.0690537084398977,0.26072220049537215
+didactics_classroom_knowledge_practices,"Didactics, classroom knowledge and practices",Applied psychology in education,644,24.274406332453825,2.7984182853169948
+didactics_classroom_knowledge_practices,"Didactics, classroom knowledge and practices",Context-sensitive educational psychology,1370,51.63965322276668,5.953156911310998
+didactics_classroom_knowledge_practices,"Didactics, classroom knowledge and practices",Fundamental educational interaction,307,11.57180550320392,1.3340285925346542
+didactics_classroom_knowledge_practices,"Didactics, classroom knowledge and practices",Methodological or measurement contribution,136,5.126272144741802,0.5909703211228436
+didactics_classroom_knowledge_practices,"Didactics, classroom knowledge and practices",Theoretical/reflexive psychology of education,146,5.503203920090463,0.6344240212054056
+didactics_classroom_knowledge_practices,"Didactics, classroom knowledge and practices",Unclear,50,1.8846588767433095,0.21726850041281018
+educational_policy_sociology_comparative,"Educational policy, sociology and comparative education",Applied psychology in education,64,22.377622377622377,0.278103680528397
+educational_policy_sociology_comparative,"Educational policy, sociology and comparative education",Context-sensitive educational psychology,193,67.48251748251748,0.8386564115934472
+educational_policy_sociology_comparative,"Educational policy, sociology and comparative education",Fundamental educational interaction,14,4.895104895104895,0.06083518011558685
+educational_policy_sociology_comparative,"Educational policy, sociology and comparative education",Methodological or measurement contribution,4,1.3986013986013985,0.017381480033024813
+educational_policy_sociology_comparative,"Educational policy, sociology and comparative education",Theoretical/reflexive psychology of education,7,2.4475524475524475,0.030417590057793424
+educational_policy_sociology_comparative,"Educational policy, sociology and comparative education",Unclear,4,1.3986013986013985,0.017381480033024813
+individual_differences_cognitive_achievement,"Individual differences, cognition and achievement",Applied psychology in education,657,36.703910614525135,2.8549080954243253
+individual_differences_cognitive_achievement,"Individual differences, cognition and achievement",Context-sensitive educational psychology,831,46.42458100558659,3.611002476860905
+individual_differences_cognitive_achievement,"Individual differences, cognition and achievement",Fundamental educational interaction,109,6.089385474860335,0.4736453308999261
+individual_differences_cognitive_achievement,"Individual differences, cognition and achievement",Methodological or measurement contribution,84,4.692737430167598,0.36501108069352106
+individual_differences_cognitive_achievement,"Individual differences, cognition and achievement",Theoretical/reflexive psychology of education,53,2.9608938547486034,0.23030461043757874
+individual_differences_cognitive_achievement,"Individual differences, cognition and achievement",Unclear,56,3.128491620111732,0.2433407204623474
+interactionist_constructivist_social_cognitive,Interactionist constructivist / social-cognitive,Applied psychology in education,297,22.164179104477615,1.2905748924520923
+interactionist_constructivist_social_cognitive,Interactionist constructivist / social-cognitive,Context-sensitive educational psychology,502,37.46268656716418,2.181375744144614
+interactionist_constructivist_social_cognitive,Interactionist constructivist / social-cognitive,Fundamental educational interaction,328,24.47761194029851,1.4252813627080345
+interactionist_constructivist_social_cognitive,Interactionist constructivist / social-cognitive,Methodological or measurement contribution,40,2.9850746268656714,0.17381480033024813
+interactionist_constructivist_social_cognitive,Interactionist constructivist / social-cognitive,Theoretical/reflexive psychology of education,134,10.0,0.5822795811063313
+interactionist_constructivist_social_cognitive,Interactionist constructivist / social-cognitive,Unclear,39,2.9104477611940296,0.1694694303219919
+intervention_instructional_design,Intervention and instructional design,Applied psychology in education,188,28.702290076335878,0.8169295615521661
+intervention_instructional_design,Intervention and instructional design,Context-sensitive educational psychology,311,47.48091603053435,1.351410072567679
+intervention_instructional_design,Intervention and instructional design,Fundamental educational interaction,80,12.213740458015266,0.34762960066049625
+intervention_instructional_design,Intervention and instructional design,Methodological or measurement contribution,32,4.885496183206107,0.1390518402641985
+intervention_instructional_design,Intervention and instructional design,Theoretical/reflexive psychology of education,29,4.427480916030534,0.12601573023942989
+intervention_instructional_design,Intervention and instructional design,Unclear,15,2.2900763358778624,0.06518055012384304
+motivation_self_regulation_identity,"Motivation, self-regulation and identity",Applied psychology in education,2281,24.537435456110153,9.911788988832399
+motivation_self_regulation_identity,"Motivation, self-regulation and identity",Context-sensitive educational psychology,5754,61.897590361445786,25.003259027506193
+motivation_self_regulation_identity,"Motivation, self-regulation and identity",Fundamental educational interaction,504,5.421686746987952,2.190066484161126
+motivation_self_regulation_identity,"Motivation, self-regulation and identity",Methodological or measurement contribution,274,2.9475043029259895,1.1906313822621997
+motivation_self_regulation_identity,"Motivation, self-regulation and identity",Theoretical/reflexive psychology of education,265,2.8506884681583475,1.1515230521878936
+motivation_self_regulation_identity,"Motivation, self-regulation and identity",Unclear,218,2.3450946643717727,0.9472906617998522
+psychometrics_measurement_statistics,"Psychometrics, measurement and statistics",Applied psychology in education,637,26.608187134502927,2.768000695259201
+psychometrics_measurement_statistics,"Psychometrics, measurement and statistics",Context-sensitive educational psychology,1402,58.56307435254804,6.092208751575197
+psychometrics_measurement_statistics,"Psychometrics, measurement and statistics",Fundamental educational interaction,101,4.218880534670008,0.43888237083387655
+psychometrics_measurement_statistics,"Psychometrics, measurement and statistics",Methodological or measurement contribution,149,6.223893065998329,0.6474601312301742
+psychometrics_measurement_statistics,"Psychometrics, measurement and statistics",Theoretical/reflexive psychology of education,33,1.3784461152882206,0.1433972102724547
+psychometrics_measurement_statistics,"Psychometrics, measurement and statistics",Unclear,72,3.007518796992481,0.3128666405944466
+social_representations_institutional_context,Social representations and institutional context,Applied psychology in education,181,25.0,0.7865119714943728
+social_representations_institutional_context,Social representations and institutional context,Context-sensitive educational psychology,365,50.41436464088398,1.586060053013514
+social_representations_institutional_context,Social representations and institutional context,Fundamental educational interaction,96,13.259668508287293,0.41715552079259544
+social_representations_institutional_context,Social representations and institutional context,Methodological or measurement contribution,33,4.558011049723757,0.1433972102724547
+social_representations_institutional_context,Social representations and institutional context,Theoretical/reflexive psychology of education,38,5.248618784530387,0.16512406031373572
+social_representations_institutional_context,Social representations and institutional context,Unclear,11,1.5193370165745856,0.047799070090818234
+sociocultural_dialogic_activity,"Sociocultural, dialogic and activity traditions",Applied psychology in education,177,12.249134948096886,0.7691304914613479
+sociocultural_dialogic_activity,"Sociocultural, dialogic and activity traditions",Context-sensitive educational psychology,563,38.96193771626297,2.4464433146482425
+sociocultural_dialogic_activity,"Sociocultural, dialogic and activity traditions",Fundamental educational interaction,452,31.280276816609,1.964107243731804
+sociocultural_dialogic_activity,"Sociocultural, dialogic and activity traditions",Methodological or measurement contribution,51,3.5294117647058822,0.22161387042106637
+sociocultural_dialogic_activity,"Sociocultural, dialogic and activity traditions",Theoretical/reflexive psychology of education,162,11.211072664359861,0.7039499413375049
+sociocultural_dialogic_activity,"Sociocultural, dialogic and activity traditions",Unclear,40,2.768166089965398,0.17381480033024813
+theoretical_philosophical_history,"Theoretical, philosophical and historical sources",Applied psychology in education,5,18.51851851851852,0.021726850041281016
+theoretical_philosophical_history,"Theoretical, philosophical and historical sources",Context-sensitive educational psychology,16,59.25925925925925,0.06952592013209925
+theoretical_philosophical_history,"Theoretical, philosophical and historical sources",Fundamental educational interaction,2,7.4074074074074066,0.008690740016512407
+theoretical_philosophical_history,"Theoretical, philosophical and historical sources",Methodological or measurement contribution,3,11.11111111111111,0.013036110024768607
+theoretical_philosophical_history,"Theoretical, philosophical and historical sources",Theoretical/reflexive psychology of education,1,3.7037037037037033,0.004345370008256203
