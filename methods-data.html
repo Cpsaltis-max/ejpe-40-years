@@ -10,16 +10,197 @@
 <body>
   <header class="site-header"><nav class="nav"><a class="brand" href="index.html">EJPE 40 Years</a><div class="nav-links"><a href="report.html">Report</a><a href="topics.html">Topics</a><a href="founding-project.html">Founding Project</a><a href="citations.html">Citation Lineages</a><a href="methods-data.html">Methods & Data</a></div></nav></header>
   <main class="page">
-    <div class="eyebrow">Reproducibility notes</div>
+    <div class="eyebrow">Online companion evidence</div>
     <h1>Methods and Public Data</h1>
-    <p class="lead">This page provides public-safe derived tables and methodological visualizations. Raw full texts, API keys, private notes, and interview materials should not be placed on the public site.</p>
+    <p class="lead">This page documents the public computational layers that complement the paper's oral-history and archival reconstruction. Raw full texts, API keys, private notes, and interview materials are not placed on the public site.</p>
     <h2>Analysis Pipeline Overview</h2>
     <div class="callout">
       <p><strong>Semantic topic modelling.</strong> Article titles and abstracts were normalised into English where needed, embedded with a transformer embedding model, clustered with BERTopic, and summarised into interpretable topic labels. The interactive map shows semantic proximity among articles; the decade plots show how topic prevalence changes over time.</p>
-      <p><strong>Founding-project coding.</strong> Articles were coded according to whether educational situations were treated mainly as applications of external psychological constructs, as context-sensitive educational settings, or as sources of fundamental psychological questions about educational interaction.</p>
+      <p><strong>Founding-project coding.</strong> Articles were coded according to whether educational situations were treated mainly as applications of external psychological constructs, as context-sensitive educational settings, or as sources of fundamental psychological questions about educational interaction aligned with EJPE's founding purpose.</p>
       <p><strong>Methodology coding.</strong> Full-text method sections were scanned to classify articles by broad methodological orientation, including experimental/intervention, qualitative/interactional, survey/correlational, psychometric/measurement, theoretical/review, mixed methods, and unspecified cases.</p>
       <p><strong>Citation lineage analysis.</strong> Reference lists were used to identify frequently cited authors, group them into intellectual lineages, and examine how those lineages are taken up by different kinds of EJPE articles.</p>
       <p><strong>Geography and editorial-board analysis.</strong> Author affiliations and editorial-board records were standardised by country and region to trace the journal's changing European and international composition.</p>
+    </div>
+    <h2>BERTopic Semantic Modelling</h2>
+    <p>The semantic topic model was used to describe the changing thematic landscape of EJPE, not to judge whether an article belonged to the founding project. It answers a content question: what kinds of research problems, populations, methods, and constructs recur together in the journal corpus?</p>
+    <div class="method-steps">
+      <div>
+        <strong>Corpus construction.</strong>
+        <p>The model used 1,885 EJPE research-article records from 1986-2026. Bibliographic records were assembled from Crossref, OpenAlex, and Springer metadata. Titles, abstracts, keywords, years, DOIs, authorship, institutional and country metadata were cleaned into a corpus table. Editorials and obituaries were treated separately from the research-article topic model.</p>
+      </div>
+      <div>
+        <strong>Bilingual normalisation.</strong>
+        <p>Because EJPE's early history included French and English publication, French abstracts were translated and normalised into English before modelling. This reduced the risk that the topic model would cluster articles by language rather than by substantive theme.</p>
+      </div>
+      <div>
+        <strong>Text represented.</strong>
+        <p>The main modelling text was the normalised abstract field. Records with fewer than eight words in the modelling text were excluded. Titles and keywords were retained for interpretation, examples, hover text, and downstream review.</p>
+      </div>
+      <div>
+        <strong>Embeddings.</strong>
+        <p>Abstracts were embedded with OpenAI <code>text-embedding-3-small</code>. Embeddings were cached by DOI and text hash so the analysis could be rerun without changing previously embedded records.</p>
+      </div>
+      <div>
+        <strong>Topic modelling.</strong>
+        <p>BERTopic was run on the OpenAI embeddings using UMAP for dimensionality reduction and HDBSCAN for density-based clustering. The main settings were: UMAP cosine metric, 15 neighbours, 5 modelling dimensions, random seed 42; HDBSCAN minimum topic size 10; English stop words; 1-2 gram vectorisation; and topic reduction to 15 BERTopic labels, yielding 14 substantive topics in the final public corpus.</p>
+      </div>
+      <div>
+        <strong>Outlier handling and visualisation.</strong>
+        <p>Outlier articles were reassigned to the nearest topics using BERTopic's c-TF-IDF outlier-reduction strategy. A separate two-dimensional UMAP projection of the same embeddings was used for the interactive semantic map; the map is a visualisation of semantic proximity, not an additional clustering step.</p>
+      </div>
+      <div>
+        <strong>Topic interpretation.</strong>
+        <p>BERTopic produced clusters and c-TF-IDF keywords. Topic labels and summaries were then generated from the highest-probability articles in each cluster using an LLM-assisted interpretive step and were reviewed as scholarly descriptions rather than treated as automatic ground truth.</p>
+      </div>
+      <div>
+        <strong>Derived outputs.</strong>
+        <p>The topic assignments were used to produce the semantic map, topic shares by decade, topic trajectories, emergence timeline, and downloadable topic-summary tables. These outputs support corpus-level interpretation but do not replace close historical reading.</p>
+      </div>
+    </div>
+    <h2>Founding-Project Orientation Coding</h2>
+    <p>The Gilly-inspired coding is an article-level orientation coding, not a topic label. It asks how each article positions education in relation to psychological theory: as a place where psychology is applied, or as a situation from which psychological questions and theory are generated. The coding evidence was the article title and normalised English abstract or reconstructed abstract text; keywords were used only as supporting evidence.</p>
+    <div class="callout gold">
+      <strong>Core coding question.</strong> Does the paper treat education as a site where psychology is applied, or as a situation from which psychological theory is generated?
+    </div>
+    <div class="method-table-wrap">
+      <table class="method-table">
+        <thead>
+          <tr>
+            <th>Orientation category</th>
+            <th>Direction of movement</th>
+            <th>Coding criterion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fundamental educational interaction</td>
+            <td>Educational situation -> psychological theory</td>
+            <td>Educational interaction, institutional practice, task structure, classroom communication, peer relations, teacher-pupil relations, or pedagogical objectives generate the psychological question.</td>
+          </tr>
+          <tr>
+            <td>Applied psychology in education</td>
+            <td>Psychology -> education</td>
+            <td>A construct or model developed elsewhere in psychology is applied to students, teachers, schools, classrooms, or educational outcomes.</td>
+          </tr>
+          <tr>
+            <td>Context-sensitive educational psychology</td>
+            <td>Education as meaningful context -> explanation</td>
+            <td>Context matters analytically, but the educational situation is not clearly the source of theory.</td>
+          </tr>
+          <tr>
+            <td>Theoretical/reflexive psychology of education</td>
+            <td>Reflexive/theoretical</td>
+            <td>The paper is conceptual, historical, epistemological, disciplinary, or theoretical.</td>
+          </tr>
+          <tr>
+            <td>Methodological or measurement contribution</td>
+            <td>Methodological/measurement</td>
+            <td>The main contribution is a method, scale, instrument, coding scheme, model, assessment, validation, or measurement procedure.</td>
+          </tr>
+          <tr>
+            <td>Unclear</td>
+            <td>Unclear</td>
+            <td>The available text does not allow a defensible classification.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted"><strong>Borderline rule.</strong> When more than one category was plausible, coding priority was: methodological or measurement contribution; theoretical/reflexive psychology of education; fundamental educational interaction; applied psychology in education; context-sensitive educational psychology; unclear.</p>
+    <h2>Replication Inputs and Workflow</h2>
+    <p>Assuming access to the same primary data, the analysis can be replicated by rebuilding the public derived tables from the article metadata, normalised abstracts, full-text files, reference sections, and editorial-board source tables. Some intermediate files are not posted publicly because they contain copyrighted article text, extracted method-section excerpts, or private working notes.</p>
+    <div class="method-steps">
+      <div>
+        <strong>Required article metadata.</strong>
+        <p>DOI, title, year, authors, abstract source, normalised English abstract, keywords, citation count, OpenAlex institution names, and OpenAlex institution country codes.</p>
+      </div>
+      <div>
+        <strong>Required full-text layer.</strong>
+        <p>Plain-text versions of EJPE articles are needed only for method-section classification and reference-list extraction. The public companion reports derived counts and figures, not the underlying article text.</p>
+      </div>
+      <div>
+        <strong>Required editorial-board layer.</strong>
+        <p>Editorial-board membership records need year or period, role, name, affiliation, and country. Countries are normalised before region and diversity summaries are produced.</p>
+      </div>
+      <div>
+        <strong>Recommended run order.</strong>
+        <p>Build the cleaned corpus; normalise bilingual abstracts; run BERTopic; run the founding-project orientation coding; extract method sections and reference lists from full texts; code cited-author lineages; then generate geography, editorial-board, and public companion outputs.</p>
+      </div>
+    </div>
+    <h2>Citation-Lineage Analysis</h2>
+    <p>The citation-lineage layer asks which intellectual ancestors EJPE repeatedly cites. It is different from both the topic model and the Gilly article-orientation coding: topic modelling classifies article content, Gilly coding classifies article orientation, and citation-lineage analysis classifies frequently cited authors and traditions.</p>
+    <div class="method-steps">
+      <div>
+        <strong>Reference extraction.</strong>
+        <p>Reference sections were extracted from full-text article files by detecting headings such as references, bibliography, references bibliographiques, bibliographie, literatura, and related variants. If no heading was detected, the final portion of the article was used only when it contained repeated year-like reference patterns.</p>
+      </div>
+      <div>
+        <strong>Reference parsing.</strong>
+        <p>Reference entries were split using APA-like author-year patterns. Person names and selected corporate sources such as OECD, UNESCO, IEA, World Bank, European Commission, and American Psychological Association were extracted as cited-author mentions.</p>
+      </div>
+      <div>
+        <strong>Counting unit.</strong>
+        <p>The analysis distinguishes reference mentions from article-author links. A cited author can appear in multiple references in one article, but lineage influence over time is usually read through distinct article-author links by decade.</p>
+      </div>
+      <div>
+        <strong>Author inclusion threshold.</strong>
+        <p>The initial cited-author master table retained authors cited by at least three EJPE articles. The lineage-coding layer focused on the most frequently cited authors, using a stricter threshold of at least ten citing articles and a maximum of 500 cited authors.</p>
+      </div>
+      <div>
+        <strong>Canonicalisation.</strong>
+        <p>Name variants were normalised into canonical cited-author rows. Seed rules handled key variants such as Perret-Clermont and Vygotsky; duplicate candidates were reviewed through frequency, initials, surname, and citation-pattern evidence.</p>
+      </div>
+      <div>
+        <strong>Lineage coding.</strong>
+        <p>Each frequent cited author was assigned an intellectual lineage and a Gilly-alignment category. Seeded canonical figures were coded directly; remaining authors were coded conservatively using author name, citation frequency, years, and examples of EJPE articles citing them.</p>
+      </div>
+      <div>
+        <strong>Lineage categories.</strong>
+        <p>Allowed lineages included interactionist constructivist/social-cognitive, sociocultural/dialogic/activity, social representations/institutional context, didactics/classroom knowledge practices, motivation/self-regulation/identity, individual-differences/cognitive achievement, psychometrics/measurement/statistics, developmental/family/peer/ecological, policy/sociology/comparative, intervention/instructional design, theoretical/philosophical/history, corporate/data/policy source, and other or unclear.</p>
+      </div>
+      <div>
+        <strong>Alignment categories.</strong>
+        <p>Cited authors were also coded as fundamental, bridge/contextual, applied/mainstream, methodological, policy/context, or unclear. These labels describe the cited author's broad intellectual role; they do not mechanically inherit the Gilly category of the citing articles.</p>
+      </div>
+    </div>
+    <h2>Full-Text Methodology Coding</h2>
+    <p>The methodology layer describes how the empirical and theoretical style of EJPE articles changed over time. It is a rule-based coding of method-section language, designed for broad historical profiling rather than fine-grained methodological adjudication.</p>
+    <div class="method-steps">
+      <div>
+        <strong>Method-section extraction.</strong>
+        <p>Method sections were located through headings such as method, methodology, participants, sample, procedure, measures, instruments, data collection, data analysis, and French equivalents. If no heading was found, a local keyword window around method-related terms was used.</p>
+      </div>
+      <div>
+        <strong>Fallback evidence.</strong>
+        <p>When no method section could be extracted, the classifier used title, abstract, and keywords. Records with full text but no named method pattern were retained as empirical study, method not clearly named; records with too little evidence were coded as unspecified from available text.</p>
+      </div>
+      <div>
+        <strong>Method categories.</strong>
+        <p>The rule set identified mixed methods, experimental or intervention, longitudinal, qualitative or interactional, psychometric or measurement, quantitative survey or correlational, secondary or large-scale dataset analysis, and review/theoretical/conceptual work.</p>
+      </div>
+      <div>
+        <strong>Primary category rule.</strong>
+        <p>All matched method labels were preserved, but decade plots use a single primary label. The primary label is the first matched category in the rule order, which favours mixed-method and design-sensitive categories before broader survey or review labels.</p>
+      </div>
+    </div>
+    <h2>Geography and Editorial-Board Analysis</h2>
+    <p>The institutional layer describes who published in EJPE and who participated in its editorial governance. It should be read as a map of affiliation and editorial composition, not as a direct measure of article content or theoretical orientation.</p>
+    <div class="method-steps">
+      <div>
+        <strong>Authorship geography.</strong>
+        <p>Author-affiliation countries were taken from OpenAlex institution country codes where available. Each article can contribute more than one country link when authors have affiliations in multiple countries.</p>
+      </div>
+      <div>
+        <strong>Region and decade summaries.</strong>
+        <p>Country codes were grouped into broad regions and counted by decade. The geography figures therefore show article-country links, not unique articles, unless explicitly labelled as collaboration type.</p>
+      </div>
+      <div>
+        <strong>International collaboration.</strong>
+        <p>Articles were classified as no affiliation country found, single-country authorship, or multi-country authorship according to the number of distinct affiliation countries attached to the article.</p>
+      </div>
+      <div>
+        <strong>Editorial board.</strong>
+        <p>Editorial-board records were cleaned by role, person, affiliation, country, source sheet, and year. Country names were normalised, regions were assigned, and yearly active membership rows were used to compute country counts, region counts, and diversity indicators.</p>
+      </div>
     </div>
     <h2>Methodology Over Time</h2>
     <section class="figure-block"><iframe src="figures/ejpe_semantic_bilingual_fulltext_methodology_by_decade_heatmap.html" data-height="560"></iframe><p class="figure-caption">Full-text methodology coding by decade.</p></section>
@@ -42,6 +223,6 @@
       <strong>Public-sharing caveat.</strong> Before publishing, review all downloadable tables to confirm that no private, copyrighted, or unpublished material is included.
     </div>
   </main>
-  <footer>Public companion site. Derived figures only.</footer>
+  <footer>Online companion to the EJPE 40 years paper. Derived figures only.</footer>
 </body>
 </html>
